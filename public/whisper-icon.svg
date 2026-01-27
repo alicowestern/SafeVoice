@@ -1,0 +1,27 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="whisperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#818CF8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C084FC;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#818CF8;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#A78BFA;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#C084FC;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main Person Icon -->
+  <circle cx="100" cy="80" r="25" fill="url(#whisperGrad)" opacity="0.9"/>
+  <path d="M70 120 Q70 100 100 100 Q130 100 130 120 L130 150 Q130 160 120 160 L80 160 Q70 160 70 150 Z" fill="url(#whisperGrad)" opacity="0.9"/>
+  
+  <!-- Sound Waves -->
+  <path d="M140 80 Q150 80 155 75" stroke="url(#waveGrad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M145 90 Q160 90 168 85" stroke="url(#waveGrad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M140 100 Q155 100 162 95" stroke="url(#waveGrad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  
+  <!-- Glow Effect -->
+  <circle cx="100" cy="80" r="28" fill="none" stroke="#818CF8" stroke-width="2" opacity="0.3"/>
+  <circle cx="100" cy="80" r="32" fill="none" stroke="#C084FC" stroke-width="1" opacity="0.2"/>
+</svg>

@@ -1,0 +1,21 @@
+{
+    "common": {
+        "appName": "SafeVoice",
+        "submit": "ቅሬታ አቅርብ",
+        "loading": "በመጫን ላይ...",
+        "error": "ችግር አጋጥሟል"
+    },
+    "landing": {
+        "title": "ደህንነቱ የተጠበቀ የማህበረሰብ ቅሬታ",
+        "subtitle": "ድምፅዎ ዋጋ አለው። ቅሬታዎን በምስጢር ያቅርቡ።",
+        "cta": "ቅሬታ አቅርብ",
+        "track": "ሁኔታውን ተከታተል"
+    },
+    "form": {
+        "label_category": "ምድብ",
+        "label_urgency": "አጣዳፊነት",
+        "label_message": "መልእክትዎ",
+        "placeholder_message": "እባክዎ ቅሬታዎን እዚህ ይፃፉ...",
+        "submit_btn": "በምስጢር ላክ"
+    }
+}

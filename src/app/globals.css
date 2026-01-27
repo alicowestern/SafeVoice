@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(240 60% 8%);
+  --color-foreground: hsl(0 0% 98%);
+
+  /* Vibrant color palette */
+  --color-primary: hsl(250 95% 65%);
+  --color-primary-dark: hsl(250 95% 55%);
+  --color-secondary: hsl(280 90% 60%);
+  --color-accent: hsl(200 95% 55%);
+
+  /* Glassmorphism */
+  --glass-bg: hsla(240 30% 15% / 0.7);
+  --glass-border: hsla(0 0% 100% / 0.1);
+}
+
+@layer base {
+  body {
+    background: linear-gradient(135deg,
+        hsl(245 55% 12%) 0%,
+        hsl(255 50% 16%) 25%,
+        hsl(265 45% 14%) 50%,
+        hsl(275 50% 18%) 75%,
+        hsl(285 45% 15%) 100%);
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    min-height: 100vh;
+  }
+
+  * {
+    @apply antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glow {
+    box-shadow: 0 0 20px hsla(250 95% 65% / 0.3),
+      0 0 40px hsla(250 95% 65% / 0.2);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px hsla(250 95% 65% / 0.3),
+        0 0 40px hsla(250 95% 65% / 0.2);
+    }
+
+    to {
+      box-shadow: 0 0 30px hsla(250 95% 65% / 0.5),
+        0 0 60px hsla(250 95% 65% / 0.3);
+    }
+  }
+}
+
+/* Utilities that might not be auto-included or to ensure compatibility */
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

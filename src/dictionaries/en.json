@@ -1,0 +1,21 @@
+{
+    "common": {
+        "appName": "SafeVoice",
+        "submit": "Submit Feedback",
+        "loading": "Loading...",
+        "error": "Something went wrong"
+    },
+    "landing": {
+        "title": "Secure Community Feedback",
+        "subtitle": "Your voice matters. Submit feedback anonymously and securely.",
+        "cta": "Submit Feedback",
+        "track": "Track Status"
+    },
+    "form": {
+        "label_category": "Category",
+        "label_urgency": "Urgency",
+        "label_message": "Your Message",
+        "placeholder_message": "Describe your concern safely...",
+        "submit_btn": "Send Securely"
+    }
+}

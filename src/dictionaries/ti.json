@@ -1,0 +1,21 @@
+{
+    "common": {
+        "appName": "SafeVoice",
+        "submit": "ርኢቶ ሃቡ",
+        "loading": "ይጽዕን ኣሎ...",
+        "error": "ጌጋ ተፈጢሩ"
+    },
+    "landing": {
+        "title": "ውሑስ ማሕበረሰባዊ ርኢቶ",
+        "subtitle": "ድምጽኩም ዋጋ ኣለዎ። ርኢቶኹም ብውሑስ መንገዲ ሃቡ።",
+        "cta": "ርኢቶ ሃቡ",
+        "track": "ኩነታት ተኸታተሉ"
+    },
+    "form": {
+        "label_category": "ምድብ",
+        "label_urgency": "ህንጡይነት",
+        "label_message": "መልእኽትኹም",
+        "placeholder_message": "ርኢቶኹም ኣብዚ ጽሓፉ...",
+        "submit_btn": "ብውሑስ ላኽ"
+    }
+}

@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum Status {
+  NEW
+  IN_REVIEW
+  RESPONDED
+  RESOLVED
+}
+
+enum Role {
+  ADMIN
+  RESPONDER
+}
+
+model Feedback {
+  id            String   @id @default(uuid())
+  referenceCode String   @unique // The code users use to track status
+  content       String // Encrypted content (conceptually)
+  language      String   @default("en") // 'en', 'am', 'ti'
+  status        Status   @default(NEW)
+  category      String?
+  urgency       String?  @default("normal") // 'low', 'normal', 'high', 'critical'
+  adminNotes    String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(RESPONDER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
