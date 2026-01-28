@@ -13,8 +13,8 @@ export default async function AdminPage() {
     return (
         <div>
             <div className="mb-8">
-                <h1 className="text-2xl font-bold text-slate-900">Inbox</h1>
-                <p className="text-slate-600">Review and respond to community feedback.</p>
+                <h1 className="text-2xl font-bold text-[var(--color-primary)]">Inbox</h1>
+                <p className="text-gray-500">Review and respond to community feedback.</p>
             </div>
             <AdminDashboard initialFeedbacks={feedbacks} />
         </div>

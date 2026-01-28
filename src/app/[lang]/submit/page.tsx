@@ -8,13 +8,33 @@ export default async function SubmitPage({ params }: { params: Promise<{ lang: s
     const dict = await getDictionary(lang)
 
     return (
-        <div className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+        <div className="py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-                <div className="mb-8 sm:mb-10 text-center">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text tracking-tight">
+                <div className="mb-12 text-center relative">
+                    <div className="absolute left-0 top-0 hidden sm:block">
+                        <Link
+                            href={`/${lang}`}
+                            className="inline-flex items-center text-sm text-gray-500 hover:text-[var(--color-primary)] transition-colors px-4 py-2 rounded-full border border-transparent hover:border-gray-200 bg-transparent hover:bg-white"
+                        >
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            Back
+                        </Link>
+                    </div>
+                    {/* Mobile Back Link */}
+                    <div className="sm:hidden mb-6 flex justify-start">
+                        <Link
+                            href={`/${lang}`}
+                            className="inline-flex items-center text-sm text-gray-500 hover:text-[var(--color-primary)] transition-colors px-4 py-2 rounded-full border border-transparent hover:border-gray-200 bg-transparent hover:bg-white"
+                        >
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            Back
+                        </Link>
+                    </div>
+
+                    <h1 className="text-3xl sm:text-4xl font-bold text-[var(--color-primary)] tracking-tight mb-4">
                         {dict.landing.title}
                     </h1>
-                    <p className="mt-3 sm:mt-4 text-base sm:text-lg text-white/70 max-w-lg mx-auto px-4">
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                         {dict.landing.subtitle}
                     </p>
                 </div>

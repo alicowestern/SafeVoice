@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Noto_Sans } from "next/font/google"; // Multilingual support
 import "../globals.css";
 import { Header } from "@/components/header";
 
-const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"] });
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "SafeVoice - Secure Community Feedback",
@@ -24,7 +28,7 @@ export default async function RootLayout({
   const { lang } = await params;
   return (
     <html lang={lang}>
-      <body className={`${outfit.className} min-h-screen flex flex-col`}>
+      <body className={`${notoSans.className} min-h-screen flex flex-col bg-[var(--color-background)] text-[var(--color-foreground)]`}>
         <Header lang={lang} />
         <main className="flex-1">
           {children}

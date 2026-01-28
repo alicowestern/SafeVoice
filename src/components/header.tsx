@@ -19,44 +19,38 @@ export function Header({ lang }: { lang: string }) {
     }
 
     return (
-        <header className="glass sticky top-0 z-50 border-b border-white/10 backdrop-blur-xl">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between">
-                <Link href={`/${lang}`} className="flex items-center gap-2 sm:gap-3 group">
-                    <div className="bg-gradient-to-br from-indigo-500 to-purple-500 p-2 rounded-lg text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                        <ShieldCheck size={20} className="sm:w-6 sm:h-6" strokeWidth={2} />
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+                <Link href={`/${lang}`} className="flex items-center gap-3">
+                    <div className="bg-[var(--color-primary)] p-2 rounded-lg text-white">
+                        <ShieldCheck size={24} strokeWidth={2} />
                     </div>
-                    <span className="text-lg sm:text-xl font-bold gradient-text">
+                    <span className="text-xl font-bold text-[var(--color-primary)]">
                         SafeVoice
                     </span>
                 </Link>
 
-                <div className="flex items-center gap-3 sm:gap-4 text-sm font-medium">
+                <div className="flex items-center gap-4">
                     <Link
                         href={`/${lang}/login`}
-                        className="text-white/60 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full"
+                        className="text-gray-500 hover:text-[var(--color-primary)] transition-colors p-2"
                         title="Member/Admin Login"
                     >
                         <ShieldCheck size={20} />
                     </Link>
-                    <div className="flex items-center gap-1 glass rounded-full p-1">
-                        <Link
-                            href={getLangLink('en')}
-                            className={`px-2 sm:px-3 py-1 rounded-full transition-all text-xs sm:text-sm ${lang === 'en' ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg' : 'text-white/60 hover:text-white'}`}
-                        >
-                            EN
-                        </Link>
-                        <Link
-                            href={getLangLink('am')}
-                            className={`px-2 sm:px-3 py-1 rounded-full transition-all text-xs sm:text-sm ${lang === 'am' ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg' : 'text-white/60 hover:text-white'}`}
-                        >
-                            አማ
-                        </Link>
-                        <Link
-                            href={getLangLink('ti')}
-                            className={`px-2 sm:px-3 py-1 rounded-full transition-all text-xs sm:text-sm ${lang === 'ti' ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg' : 'text-white/60 hover:text-white'}`}
-                        >
-                            ትግ
-                        </Link>
+                    <div className="flex items-center gap-1 bg-[var(--color-background)] rounded-full p-1.5 border border-gray-200">
+                        {['en', 'am', 'ti'].map((l) => (
+                            <Link
+                                key={l}
+                                href={getLangLink(l)}
+                                className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${lang === l
+                                        ? 'bg-white text-[var(--color-primary)] shadow-sm'
+                                        : 'text-gray-500 hover:text-gray-900'
+                                    }`}
+                            >
+                                {l === 'en' ? 'EN' : l === 'am' ? 'አማ' : 'ትግ'}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>
