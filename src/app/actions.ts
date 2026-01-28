@@ -91,7 +91,8 @@ export async function checkStatus(prevState: any, formData: FormData) {
                 status: true,
                 category: true,
                 createdAt: true,
-                adminNotes: true // Maybe call this "response" in UI
+                adminNotes: false, // Internal notes
+                adminResponse: true // Response for the user
             }
         })
 
@@ -109,7 +110,7 @@ export async function checkStatus(prevState: any, formData: FormData) {
     }
 }
 
-export async function updateStatus_Action(id: string, newStatus: string) {
+export async function updateStatus_Action(id: string, newStatus: string, adminResponse?: string) {
     // Verify auth (implementation detail: this action should be protected, 
     // but for MVP relying on the fact that only Admin Dashboard calls it, 
     // and Admin Dashboard is protected by layout. 
@@ -118,7 +119,10 @@ export async function updateStatus_Action(id: string, newStatus: string) {
     try {
         await db.feedback.update({
             where: { id },
-            data: { status: newStatus as any } // Cast to enum
+            data: {
+                status: newStatus as any,
+                adminResponse: adminResponse || undefined
+            }
         })
         return { success: true }
     } catch (e) {

@@ -1,5 +1,6 @@
 const { PrismaClient } = require('@prisma/client')
 const { hash } = require('bcryptjs')
+require('dotenv').config()
 
 const prisma = new PrismaClient()
 

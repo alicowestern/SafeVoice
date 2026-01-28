@@ -81,10 +81,12 @@ export function FeedbackForm({ lang, dict }: { lang: string; dict: Dictionary })
                             name="category"
                             className="block w-full rounded-xl border-white/10 bg-white/5 py-3 sm:py-3.5 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 transition-all cursor-pointer hover:bg-white/10 text-white text-sm sm:text-base"
                         >
-                            <option value="General">General</option>
-                            <option value="Safety">Safety Concern</option>
-                            <option value="Supplies">Supplies / Aid</option>
-                            <option value="Medical">Medical</option>
+                            <option value="Access to Services">Access to Services</option>
+                            <option value="Staff Behavior & Conduct">Staff Behavior & Conduct</option>
+                            <option value="Protection & Safety Concerns">Protection & Safety Concerns</option>
+                            <option value="Program Quality & Delivery">Program Quality & Delivery</option>
+                            <option value="Information & Communication">Information & Communication</option>
+                            <option value="Suggestions & Improvements">Suggestions & Improvements</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
@@ -92,7 +94,7 @@ export function FeedbackForm({ lang, dict }: { lang: string; dict: Dictionary })
 
                 <div className="space-y-2">
                     <label htmlFor="urgency" className="block text-sm font-semibold text-white/90">
-                        {dict.form.label_urgency}
+                        {dict.form.label_urgency} (How urgent is this issue?)
                     </label>
                     <div className="relative">
                         <select
@@ -101,10 +103,10 @@ export function FeedbackForm({ lang, dict }: { lang: string; dict: Dictionary })
                             defaultValue="normal"
                             className="block w-full rounded-xl border-white/10 bg-white/5 py-3 sm:py-3.5 px-4 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 transition-all cursor-pointer hover:bg-white/10 text-white text-sm sm:text-base"
                         >
-                            <option value="low">Low - Info only</option>
-                            <option value="normal">Normal - Needs attention</option>
-                            <option value="high">High - Urgent</option>
-                            <option value="critical">Critical - Emergency</option>
+                            <option value="low">General feedback</option>
+                            <option value="normal">Needs attention</option>
+                            <option value="high">Serious concern</option>
+                            <option value="critical">Urgent safety concern</option>
                         </select>
                     </div>
                 </div>

@@ -31,6 +31,13 @@ export function Header({ lang }: { lang: string }) {
                 </Link>
 
                 <div className="flex items-center gap-3 sm:gap-4 text-sm font-medium">
+                    <Link
+                        href={`/${lang}/login`}
+                        className="text-white/60 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full"
+                        title="Member/Admin Login"
+                    >
+                        <ShieldCheck size={20} />
+                    </Link>
                     <div className="flex items-center gap-1 glass rounded-full p-1">
                         <Link
                             href={getLangLink('en')}

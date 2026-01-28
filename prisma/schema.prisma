@@ -27,6 +27,7 @@ model Feedback {
   category      String?
   urgency       String?  @default("normal") // 'low', 'normal', 'high', 'critical'
   adminNotes    String?
+  adminResponse String? // Response visible to the user
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 }
